@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="container-fluid">
+		<div class="fontIcon" ng-show='loading'>
+			<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+			<span class="sr-only">Loading...</span>
+		</div>
+
+		<div class="row paddingLeft">
+			<h2>{{movie.Title}}</h2>
+		</div>
+		<div class="row marginTop">
+			<div class="col-md-6">
+				<img ng-src="{{movie.Poster}}" alt="{{movie.Poster}}" class="img-thumbnail"/>
+			</div>
+			<div class="col-md-6">
+				<h5>Genre: <small>{{movie.Genre}}</small></h5>
+				<h5>Runtime: <small>{{movie.Runtime}}</small></h5>
+				<h5>Actors: <small>{{movie.Actors}}</small></h5>
+				<h5>Director: <small>{{movie.Director}}</small></h5>
+				<h5>Made at: <small>{{movie.Country}}</small></h5>
+				<h5>Released: <small>{{movie.Released}}</small></h5>
+				<h5>Awards: <small>{{movie.Awards}}</small></h5>
+				<h5>Plot: <small>{{movie.Plot}}</small></h5>
+
+<form class="form-group">
+				<h4>Comments</h4>
+				<input ng-model="theName" placeholder="Your Name" class="form-control"/>
+				<br>
+				<textarea ng-model="theComment" placeholder="Your Comment" class="form-control"></textarea>
+				<br>
+				<button class="btn btn-default btn-sm active" ng-click="addComment(theName,theComment)">Save</button>
+
+				<ul class="marginTop">
+					<li ng-repeat="comnt in movieComments track by comnt.id" class="commentBox">
+						<a style="float: right;" ng-click="remComment($index)">X</a>
+						<h5>Name: <small>{{ comnt.name }}</small></h5>
+						<h5>Comment: <small>{{comnt.comment}}</small></h5>
+					</li>
+				</ul>
+</form>
+			</div>
+		</div>
+	</div>
+</div>
+

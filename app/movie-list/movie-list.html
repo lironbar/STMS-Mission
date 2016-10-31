@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="container-fluid">
+    <div class="row paddingLeft">
+      <div class="form-group col-sm-4 col-xs-5">
+        <label>Search For A Movie:</label>
+        <input placeholder="Search..." ng-model="query" class="form-control" />
+      </div>
+    </div>
+    <div class="row paddingLeft">
+      <div class="form-group col-sm-2 col-xs-5">
+        <label>Sort by:</label>
+        <select ng-model="orderProp" class="form-control">
+          <option value="title">Movie Name</option>
+          <option value="id">Rating</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid marginTop">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th> <i class="fa fa-hashtag" aria-hidden="true"></i> </th>
+            <th>Movie Title</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="movie in moviesList | filter: query  | orderBy: orderProp">
+            <td class=""> {{$index + 1}}</td>
+            <td class=""> <a href="#!/movies/{{movie.title}}">{{movie.title}}</a> </td>
+            <td class=""> <p>Rating: {{movie.rating}} <i class="fa fa-star-o" aria-hidden="true"></i> </p> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

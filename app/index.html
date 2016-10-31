@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="IMDB-App" >
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>STMS Mission</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/ngstorage/ngstorage.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="https://use.fontawesome.com/d07ae8a03a.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="app.config.js"></script>
+  <script src="services/movie.service.module.js"></script>
+  <script src="services/movie.service.js"></script>
+  <script src="movie-list/movie-list.module.js"></script>
+  <script src="movie-list/movie-list.js"></script>
+  <script src="movie-detail/movie-detail.module.js"></script>
+  <script src="movie-detail/movie-detail.js"></script>
+
+</head>
+
+<body>
+
+  <div class="glass" ng-show='loading'></div>
+  <div class="menu">
+    <a href="#!/view1" class=" btn btn-primary btn-xs">Home</a>
+  </div>
+
+  <div ng-view></div>
+
+</body>
+</html>
